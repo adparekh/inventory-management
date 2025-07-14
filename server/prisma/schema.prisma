@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  userID String @id
+  name   String
+  email  String
+}
+
+model Products {
+  productID     String      @id
+  name          String
+  price         Float
+  rating        Float?
+  stockQuantity Int
+  Sales         Sales[]
+  Purchases     Purchases[]
+}
+
+model Sales {
+  saleID      String   @id
+  productID   String
+  timestamp   DateTime
+  quantity    Int
+  unitPrice   Float
+  totalAmount Float
+  product     Products @relation(fields: [productID], references: [productID])
+}
+
+model Purchases {
+  purchaseID String   @id
+  productID  String
+  timestamp  DateTime
+  quantity   Int
+  unitCost   Float
+  totalCost  Float
+  product    Products @relation(fields: [productID], references: [productID])
+}
+
+model Expenses {
+  expenseID String   @id
+  category  String
+  amount    Float
+  timestamp DateTime
+}
+
+model SalesSummary {
+  salesSummaryID String   @id
+  totalValue     Float
+  changePercent  Float?
+  date           DateTime
+}
+
+model PurchaseSummary {
+  purchaseSummaryID String   @id
+  totalPurchased    Float
+  changePercent     Float?
+  date              DateTime
+}
+
+model ExpenseSummary {
+  expenseSummaryID  String              @id
+  totalExpenses     Float
+  date              DateTime
+  ExpenseByCategory ExpenseByCategory[]
+}
+
+model ExpenseByCategory {
+  expenseByCategoryID String         @id
+  expenseSummaryID    String
+  category            String
+  amount              BigInt
+  date                DateTime
+  expenseSummary      ExpenseSummary @relation(fields: [expenseSummaryID], references: [expenseSummaryID])
+}
