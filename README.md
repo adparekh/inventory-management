@@ -45,17 +45,43 @@ This project was developed to showcase advanced full-stack development skills, c
 - **AWS EC2** – Hosting backend services  
 - **AWS RDS** – PostgreSQL database hosting  
 - **AWS Amplify** – Frontend hosting (Next.js)  
-- **AWS S3** – Storage for product images and static assets  
+- **AWS S3** – Storage for product images and static assets
+
+---
+
+## 🎬 Demo Video
+
+You can watch a demo of InventoryOS here:  
+[Demo Video](assets/demo.mp4)
 
 ---
 
 ## 📸 Screenshots
 
+| Dashboard | Inventory Page | Products Page |
+|-----------|----------------|---------------|
+| ![Dashboard](assets/1a-dashboard-page.png) | ![Inventory](assets/2-inventory-page.png) | ![Products](assets/3-products-page.png) |
+
+| Users Page | Settings Page | Expenses Page |
+|------------|---------------|---------------|
+| ![Users](assets/4-users-page.png) | ![Expenses](assets/5-settings-page.png) | ![Settings](assets/6-expenses-page.png) |
+
+| Dashboard (Dark Mode) | Tablet View | Mobile View |
+|------------|---------------|---------------|
+| ![Users](assets/1b-dashboard-page.png) | ![Expenses](assets/7-medium-screen.png) | ![Settings](assets/8-small-screen.png) |
 
 ---
 
 ## ☁️ AWS Deployment Architecture
 
+![AWS Architecture](assets/AWS-architecture.png)
+
+---
+
+## 🗄️ Data Model Diagram
+
+
+![Data Model Diagram](assets/data-model-diagram.png)
 
 ---
 
