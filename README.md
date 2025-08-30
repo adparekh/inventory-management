@@ -51,8 +51,7 @@ This project was developed to showcase advanced full-stack development skills, c
 
 ## 🎬 Demo Video
 
-You can watch a demo of InventoryOS here:  
-[Demo Video](assets/demo.mp4)
+You can watch a demo of InventoryOS [here](https://youtu.be/ApKvgl4U1Wk).
 
 ---
 
